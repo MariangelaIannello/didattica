@@ -23,6 +23,10 @@ ls *.fasta #list all fasta files
 * \* any character
 * ; Shell Command Separator
 * \> redirect output to new file
+* \t tab
+* \n end of line in bash
+* \r end of line in mac
+* \n\r end of line in windows
 * many others (& | < ? []{} etc..)
 ---
 ## Permissions
@@ -55,7 +59,7 @@ cp –r foldername #copy folder
 mv foldername pathwheretomove #move folder
 rm –r foldername #remove folder
 ```
-> tip: be VERY careful with rm, once you removed something there is no way to undo it
+> tip: be VERY careful with rm, once you removed something there is no way to undo it; remember bash is case sensitive, the file, folder or scritp "Data" is different from "data".
 ---
 ## Merge and sort files
 ```
@@ -71,7 +75,7 @@ join -1 1 -2 1 sorted_file1 sorted_file2 #join two files according to first colu
 join -1 1 -2 1 -a 1 sorted_file1 sorted_file2 #keep also non joined rows
 ```
 ---
-##Grep
+## Grep
 ```
 grep "word" file #print all rows that contains "word"
 grep -v "word" file #print all rows that contains exactly the pattern "word"
@@ -80,13 +84,63 @@ grep -c "word" file #count how many rows contain the patter "word"
 grep –A10 "word" file # print rows containing pattern "word" and the 10 rows after
 grep –B10 "word" file # print rows containing pattern "word" and the 10 rows before
 grep –C10 "word" file # print rows containing pattern "word" and the 10 rows after and before
+grep "Locus10[12]" file #print Locus101 and Locus102 
+greo -E "(Locus101|Locus102)" file #print Locus101 and Locus102 
 ```
 > special characters: 
 > * ^ starting with ; grep "^>" file #print lines starting with ">"
 > * $ ending with ; grep ">$" file #print lines ending with ">"
+
+> Regular Expressions: a sequence of characters that specifies a pattern
 ---
-##Awk and Sed
+## Awk
+```
+awk '{print $1}' file #print first column
+awk '{print $0}' file #print all columns
+awk '{print $NF}' file #print last column
+cut -f 2 file #also cut print columns, print column 2
+cut  -f 3-8 # print from column 3 to 8
+cut –f 3,5,7 #print column 3, 5 and 7
+awk '{print $4"\t"$1}' file #change orders of column and use tab as field separator in the output
+awk -F";" '{print $3,$4}" #fiels separator is ";"
+awk '$1==$2 {print} #if first column = second column, print all columns
+awk '$1 ~ /chr2|chr3/ { print $0 "\t" $3 - $2 }' #if first column contain "chr2" or "chr3", print all columns, and a column with the difference between $3 and $2
+awk '$1 ~ /chr1/ && $3 - $2 > 10 '{print}' #if both the first column  contain "chr1" AND $3-$2>0 , print all columns
+```
+![awk](https://raw.githubusercontent.com/MariangelaIannello/didattica/main/images/awk.png)
+---
+## Bioawk
 
+```
+bioawk -c fastx '{print ">"$name"\n"$seq}' file.fastq #turn a FASTQ file into a FASTA file; fastx = input as FASTQ or FASTA; -c=unspecific tab-delimited formats
+bioawk -c fastx '{print ">"$name"\n"revcomp($seq)}' file.fasta #reverse complement a sequence
+bioawk -c fastx '{print $name,length($seq)}' #print name and length of sequences in fasta file
+```
+---
+## Sed
+```
+sed 's/Locus/Transcript/' file #for each line subtitute "Locus" with "Transcripts" at first occurrance
+sed 's/Locus/Transcript/g' file #for each line subtitute "Locus" with "Transcripts" at first occurrance
+sed -i 's/Locus/Transcript/g' # overwrite input with the output
+sed '/Locus/d' file #delete any row containing "Locus"
+```
 
+> $ echo "chr1:28427874-28425431" | \
+sed -E 's/^(chr[^:]+):([0-9]+)-([0-9]+)/\1\t\2\t\3/'
 
+> chr1 28427874 28425431
 
+The first component of this
+regular expression is ^\(chr[^:]+\):. This matches the text that begins at the start of
+the line (the anchor ^ enforces this), and then captures everything between \( and \).
+The pattern used for capturing begins with “chr” and matches one or more characters
+that are not “:”, our delimiter. We match until the first “:” through a character class
+defined by everything that’s not “:”, [^:]+.
+The second and third components of this regular expression are the same: match and
+capture more than one number. Finally, our replacement is these three captured
+groups, interspersed with tabs, \t.
+
+> $ echo "chr1:abRsZtjf-dhThdbUdj" | \
+sed -E 's/^(chr[^:]+):([a-zA-Z]+)-([a-zA-Z]+)/\1\t\2\t\3/'
+
+> chr1 abRsZtjf dhThdbUdj
