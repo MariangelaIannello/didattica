@@ -9,10 +9,11 @@ top # display Linux processes
 pwd #print working directory
 cd #change directory (relative or absolute path)
 cd .. # bring you back one directory up
- cd ~ #cd home
+cd ~ #cd home
 ls #print list of elements in directory
 ls –lh # print sizes in human readable format
-man list # (or any command, gives the manual for that command)
+man list #(or any command, gives the manual for that command)
+history #display last commands
 ls *.fasta #list all fasta files
 ```
 > **special characters:**
