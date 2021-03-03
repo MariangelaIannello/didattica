@@ -79,7 +79,7 @@ join -1 1 -2 1 -a 1 sorted_file1 sorted_file2 #keep also non joined rows
 ## Grep
 ```
 grep "word" file #print all rows that contains "word"
-grep -v "word" file #print all rows that contains exactly the pattern "word"
+grep -w "word" file #print all rows that contains exactly the pattern "word"
 grep -v "word" file #inverted match, print all rows that not contain the patter "word"
 grep -c "word" file #count how many rows contain the patter "word"
 grep –A10 "word" file # print rows containing pattern "word" and the 10 rows after
