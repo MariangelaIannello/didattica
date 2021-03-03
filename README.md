@@ -64,7 +64,7 @@ rm –r foldername #remove folder
 ```
 > tip: be VERY careful with rm, once you removed something there is no way to undo it; remember bash is case sensitive, the file, folder or scritp "Data" is different from "data".
 ---
-## Download and trasfer data
+## Download and transfer data
 
 wget can handle HTTP and FTP links
 ```
@@ -83,7 +83,10 @@ scp file.fasta USERNAME@IP:/home/data/ #transfer file from server to another ser
 scp –r data USERNAME@IP:/home/data/
 scp –r USERNAME@IP:/home/data ./
 ```
-
+## Data integrity
+```
+md5sum nomefile
+```
 ---
 ## Compress and decompress data
 
