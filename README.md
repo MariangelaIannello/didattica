@@ -53,7 +53,7 @@ head filename #see first 10 rows of the file
 tail filename #see last 10 rows of the file
 head –n5 filename #(or tail –n 5) see only first 5 (or last) 5 rows
 wc filename #outputs the number of words, lines, and characters
-wc –l #outputs the number of lines
+wc –l filename #outputs the number of lines
 rm file #remove file
 rm * #remove every file in that directory
 mkdir newfoldername# make new directory
@@ -159,13 +159,13 @@ awk '{print $1}' file #print first column
 awk '{print $0}' file #print all columns
 awk '{print $NF}' file #print last column
 cut -f 2 file #also cut print columns, print column 2
-cut  -f 3-8 # print from column 3 to 8
-cut –f 3,5,7 #print column 3, 5 and 7
+cut  -f 3-8 file # print from column 3 to 8
+cut –f 3,5,7 file #print column 3, 5 and 7
 awk '{print $4"\t"$1}' file #change orders of column and use tab as field separator in the output
-awk -F";" '{print $3,$4}" #fiels separator is ";"
-awk '$1==$2 {print} #if first column = second column, print all columns
-awk '$1 ~ /chr2|chr3/ { print $0 "\t" $3 - $2 }' #if first column contain "chr2" or "chr3", print all columns, and a column with the difference between $3 and $2
-awk '$1 ~ /chr1/ && $3 - $2 > 10 '{print}' #if both the first column  contain "chr1" AND $3-$2>0 , print all columns
+awk -F";" '{print $3,$4}' file #fiels separator is ";"
+awk '$1==$2 {print}' file #if first column = second column, print all columns
+awk '$1 ~ /chr2|chr3/ { print $0 "\t" $3 - $2 }' file #if first column contain "chr2" or "chr3", print all columns, and a column with the difference between $3 and $2
+awk '$1 ~ /chr1/ && $3 - $2 > 10 '{print}' file #if both the first column  contain "chr1" AND $3-$2>0 , print all columns
 ```
 ![awk](https://raw.githubusercontent.com/MariangelaIannello/didattica/main/images/awk.png)
 ---
@@ -174,14 +174,14 @@ awk '$1 ~ /chr1/ && $3 - $2 > 10 '{print}' #if both the first column  contain "c
 ```
 bioawk -c fastx '{print ">"$name"\n"$seq}' file.fastq #turn a FASTQ file into a FASTA file; fastx = input as FASTQ or FASTA; -c=unspecific tab-delimited formats
 bioawk -c fastx '{print ">"$name"\n"revcomp($seq)}' file.fasta #reverse complement a sequence
-bioawk -c fastx '{print $name,length($seq)}' #print name and length of sequences in fasta file
+bioawk -c fastx '{print $name,length($seq)}' file.fasta #print name and length of sequences in fasta file
 ```
 ---
 ## Sed
 ```
 sed 's/Locus/Transcript/' file #for each line subtitute "Locus" with "Transcripts" at first occurrance
 sed 's/Locus/Transcript/g' file #for each line subtitute "Locus" with "Transcripts" at first occurrance
-sed -i 's/Locus/Transcript/g' # overwrite input with the output
+sed -i 's/Locus/Transcript/g' file # overwrite input with the output
 sed '/Locus/d' file #delete any row containing "Locus"
 ```
 
