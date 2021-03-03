@@ -124,6 +124,16 @@ join -1 1 -2 1 sorted_file1 sorted_file2 #join two files according to first colu
 join -1 1 -2 1 -a 1 sorted_file1 sorted_file2 #keep also non joined rows
 ```
 ---
+## Compare two sorted files
+```
+diff -y file1 file2 #Compare FILES line by line and show side by side
+comm file1 file2 #compare two sorted files line by line
+comm -1 file1 file2 #lines unique to file1
+comm -2 file1 file2 #lines unique to file2
+comm -12 file1 file2 #print only lines present in both file1 and file2
+comm -3 file1 file2 #print lines in file1 not in file2, and vice versa
+```
+---
 ## Grep
 ```
 grep "word" file #print all rows that contains "word"
@@ -173,16 +183,6 @@ sed 's/Locus/Transcript/' file #for each line subtitute "Locus" with "Transcript
 sed 's/Locus/Transcript/g' file #for each line subtitute "Locus" with "Transcripts" at first occurrance
 sed -i 's/Locus/Transcript/g' # overwrite input with the output
 sed '/Locus/d' file #delete any row containing "Locus"
-```
----
-## Compare two sorted files
-```
-diff -y file1 file2 #Compare FILES line by line and show side by side
-comm file1 file2 #compare two sorted files line by line
-comm -1 file1 file2 #lines unique to file1
-comm -2 file1 file2 #lines unique to file2
-comm -12 file1 file2 #print only lines present in both file1 and file2
-comm -3 file1 file2 #print lines in file1 not in file2, and vice versa
 ```
 
 > $ echo "chr1:28427874-28425431" | \
