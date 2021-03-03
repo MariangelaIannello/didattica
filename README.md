@@ -166,13 +166,22 @@ bioawk -c fastx '{print ">"$name"\n"revcomp($seq)}' file.fasta #reverse compleme
 bioawk -c fastx '{print $name,length($seq)}' #print name and length of sequences in fasta file
 ```
 ---
-## Sed and diff
+## Sed
 ```
 sed 's/Locus/Transcript/' file #for each line subtitute "Locus" with "Transcripts" at first occurrance
 sed 's/Locus/Transcript/g' file #for each line subtitute "Locus" with "Transcripts" at first occurrance
 sed -i 's/Locus/Transcript/g' # overwrite input with the output
 sed '/Locus/d' file #delete any row containing "Locus"
+```
+---
+## Compare two sorted files
+```
 diff -y file1 file2 #Compare FILES line by line and show side by side
+comm file1 file2 #compare two sorted files line by line
+comm -1 file1 file2 #lines unique to file1
+comm -2 file1 file2 #lines unique to file2
+comm -12 file1 file2 #print only lines present in both file1 and file2
+comm -3 file1 file2 #print lines in file1 not in file2, and vice versa
 ```
 
 > $ echo "chr1:28427874-28425431" | \
