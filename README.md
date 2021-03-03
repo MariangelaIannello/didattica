@@ -9,11 +9,11 @@ top # display Linux processes
 pwd #print working directory
 cd #change directory (relative or absolute path)
 cd .. # bring you back one directory up
-cd ~ #cd home
+ cd ~ #cd home
 ls #print list of elements in directory
 ls –lh # print sizes in human readable format
-man list #(or any command, gives the manual for that command)
-history #display last commands
+man list # (or any command, gives the manual for that command)
+history #dispay last commands
 ls *.fasta #list all fasta files
 ```
 > **special characters:**
@@ -38,6 +38,8 @@ chmod #change permissions of your files (or directory with chmod –r)
 
 ![chmod](https://raw.githubusercontent.com/MariangelaIannello/didattica/main/images/chmod.png)
 ---
+
+
 ## Edit files
 ` vi nomefile #create new empty file`
 > avoid special characters; once created new file press “i" to write, after editing press Ctrl+c+: and type wq to save and exit from file or q! to exit without saving
@@ -62,6 +64,49 @@ rm –r foldername #remove folder
 ```
 > tip: be VERY careful with rm, once you removed something there is no way to undo it; remember bash is case sensitive, the file, folder or scritp "Data" is different from "data".
 ---
+## Download and trasfer data
+
+wget can handle HTTP and FTP links
+```
+wget https://github.com/MariangelaIannello/didattica/archive/main.zip 
+```
+For public data we don’t need any authentication to gain access to this file, otherwise use flags *--user=*  and *--ask-password* 
+```
+curl –O link #-O saves the file with its original filename
+```
+curl can transfer files using more protocols than wget. It supports FTP, FTPS, HTTP, HTTPS, SCP, SFTP, TFTP, TELNET, DICT, LDAP, LDAPS, FILE, POP3, IMAP, SMTP, RTMP and RTSP
+
+scp (secure copy): transfer data from local computer to remote host, or from two remote hosts. scp works just like cp, except we need to specify both host and path
+
+```
+scp file.fasta USERNAME@IP:/home/data/ #transfer file from server to another server or
+scp –r data USERNAME@IP:/home/data/
+scp –r USERNAME@IP:/home/data ./
+```
+
+---
+## Compress and decompress data
+
+```
+gzip file (or folder) #compress file file.gz
+bzip2 file #slower than gzip but higher compression ratio
+gzip –k file #keep also the not compressed file
+gunzip file.gz #uncompress file
+zless file.gz #less compressed file
+zgrep "word" file.gz #use grep in compressed file
+```
+With **gzip** you don't get compression across files, each file is compressed independent of the others in the archive, advantage: you can access any of the files contained within.
+
+With **tar** the only gain you can expect using tar alone would be by avoiding the space wasted by the file system as most of them allocate space at some granularity.
+
+In **tar.gz** compression: create an archieve and extra step that compresses the entire archive, you cannot access single files without decompressing them.
+```
+tar –czvf name_output.tar.gz name_input # c create archive; f specify new output; v verbosely;
+tar -xvfz ./nome_archivio.tgz #decompress archive
+```
+
+---
+
 ## Merge and sort files
 ```
 cat file1 file2 file3 … #merge multiple files in 1  
@@ -79,7 +124,7 @@ join -1 1 -2 1 -a 1 sorted_file1 sorted_file2 #keep also non joined rows
 ## Grep
 ```
 grep "word" file #print all rows that contains "word"
-grep -w "word" file #print all rows that contains exactly the pattern "word"
+grep -v "word" file #print all rows that contains exactly the pattern "word"
 grep -v "word" file #inverted match, print all rows that not contain the patter "word"
 grep -c "word" file #count how many rows contain the patter "word"
 grep –A10 "word" file # print rows containing pattern "word" and the 10 rows after
@@ -118,12 +163,13 @@ bioawk -c fastx '{print ">"$name"\n"revcomp($seq)}' file.fasta #reverse compleme
 bioawk -c fastx '{print $name,length($seq)}' #print name and length of sequences in fasta file
 ```
 ---
-## Sed
+## Sed and diff
 ```
 sed 's/Locus/Transcript/' file #for each line subtitute "Locus" with "Transcripts" at first occurrance
 sed 's/Locus/Transcript/g' file #for each line subtitute "Locus" with "Transcripts" at first occurrance
 sed -i 's/Locus/Transcript/g' # overwrite input with the output
 sed '/Locus/d' file #delete any row containing "Locus"
+diff -y file1 file2 #Compare FILES line by line and show side by side
 ```
 
 > $ echo "chr1:28427874-28425431" | \
