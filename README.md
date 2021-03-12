@@ -2,6 +2,7 @@
 ## Paths, files and directories
 
 ```
+#Open linux or mac terminal; if you have windows download [cygwin](https://www.cygwin.com/) 
 ssh username@ip #login to a server via ssh, it will ask for your password
 Ctrl+d #close session
 Ctrl+c #clean the command line
@@ -9,7 +10,8 @@ top # display Linux processes
 pwd #print working directory
 cd #change directory (relative or absolute path)
 cd .. # bring you back one directory up
- cd ~ #cd home
+cd ~ #cd home
+#in cygwin cd ../../cygdrive/c/Users/USERNAME/Desktop
 ls #print list of elements in directory
 ls –lh # print sizes in human readable format
 man list # (or any command, gives the manual for that command)
@@ -122,6 +124,7 @@ sort -k1,1 -k2,2nr file #sort by first column adn then numerically by second col
 sort -k1,1V -k2,2n file #as before but human sorted
 join -1 1 -2 1 sorted_file1 sorted_file2 #join two files according to first column of each file
 join -1 1 -2 1 -a 1 sorted_file1 sorted_file2 #keep also non joined rows
+paste file1 file2 #merge lines of files
 ```
 ---
 ## Compare two sorted files
@@ -166,6 +169,7 @@ awk -F";" '{print $3,$4}' file #fiels separator is ";"
 awk '$1==$2 {print}' file #if first column = second column, print all columns
 awk '$1 ~ /chr2|chr3/ { print $0 "\t" $3 - $2 }' file #if first column contain "chr2" or "chr3", print all columns, and a column with the difference between $3 and $2
 awk '$1 ~ /chr1/ && $3 - $2 > 10 '{print}' file #if both the first column  contain "chr1" AND $3-$2>0 , print all columns
+awk '{if ($1~">") print $0; else print length}' "fasta_file #print length instead of sequence in fasta file
 ```
 ![awk](https://raw.githubusercontent.com/MariangelaIannello/didattica/main/images/awk.png)
 ---
