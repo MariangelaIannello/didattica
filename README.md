@@ -1,8 +1,8 @@
 # Bash
 ## Paths, files and directories
 
+Open linux or mac terminal; if you have windows download [cygwin](https://www.cygwin.com/) 
 ```
-#Open linux or mac terminal; if you have windows download [cygwin](https://www.cygwin.com/) 
 ssh username@ip #login to a server via ssh, it will ask for your password
 Ctrl+d #close session
 Ctrl+c #clean the command line
