@@ -106,7 +106,7 @@ With **tar** the only gain you can expect using tar alone would be by avoiding t
 
 In **tar.gz** compression: create an archieve and extra step that compresses the entire archive, you cannot access single files without decompressing them.
 ```
-tar –czvf name_output.tar.gz name_input # c create archive; f specify new output; v verbosely;
+tar czf name_output.tar.gz name_input # c create archive; z gzip archive; f specify new output
 tar -xvfz ./nome_archivio.tgz #decompress archive
 ```
 
