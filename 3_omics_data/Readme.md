@@ -57,6 +57,7 @@ FASTA file: usually two lines per sequence.
 ```
 fastqc file.fastq file2.fastq .. [-o output dir] [-f fastq]
 ```
+[Fastqc example](https://github.com/MariangelaIannello/didattica/blob/main/3_omics_data/files/SRR1325111_fastqc.html)
 ---
 ## Filter low quality reads
 [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
