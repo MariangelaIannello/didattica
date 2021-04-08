@@ -1,3 +1,34 @@
+# Server didattica (login using Guacamole)
+
+[https://rlab.unibo.it](https://rlab.unibo.it)
+
+login using your unibo email address and password
+To upload and download data open the menu with Ctrl+Alt+Shift for Windows or control+Shift+command for Mac
+To copy text (with Windows): select text to copy and paste it on command line using right click
+To copy text (with Mac): select text and press control+Shift+C to copy, control+Shift+V to paste
+
+Useful commands:
+```
+Ctrl+d # close session
+whoami # username
+who # which users are logged in
+top # display Linux processes
+df -h # disk free
+du -h # disk usage
+```
+Useful Path:
+/var/local/diamond_db # diamond database
+
+## Conda
+```
+conda init bash # initialize conda
+conda env list # see list of environments
+conda activate "environment_name" # activate environment_name
+conda list # see packages installed in that environment_name
+conda deactivate # close environment 
+```
+
+
 # Bash scripting
 
 ## Background Processes
