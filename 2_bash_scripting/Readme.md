@@ -7,6 +7,24 @@ To upload and download data open the menu with Ctrl+Alt+Shift for Windows or con
 To copy text (with Windows): select text to copy and paste it on command line using right click
 To copy text (with Mac): select text and press control+Shift+C to copy, control+Shift+V to paste
 
+## Common ways to login to a Server
+```
+ssh username@ip # from Ubunt or Mac terminal
+```
+Using [putty](https://www.putty.org/) for Windows
+
+## Common way to transfer data
+
+using Ubuntu or Mac terminal
+```
+scp username@ip:path/to/file/to/copy /where/to/paste/it # copy a file from remote host to local host
+scp path/to/file/to/copy username@ip:/where/to/paste/it # copy a file from local host to remote host
+scp -R sername@ip:path/to/file/to/copy /where/to/paste/it # copy a directory
+```
+using Windows:
+[Cyberduck](https://cyberduck.io/)
+
+
 Useful commands:
 ```
 Ctrl+d # close session
