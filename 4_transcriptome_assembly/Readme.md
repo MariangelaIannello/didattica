@@ -52,11 +52,11 @@ Once your assembly is complete, you'll want to know how 'good' it is
 3) Compute the N50 transcript contig length
    
    ``` 
-    perl /usr/local/trinityrnaseq-Trinity-v2.6.6/util/TrinityStats.pl input.fasta > output.txt
+    TrinityStats.pl input.fasta > output.txt
     ```
 
 ## Isoforms redundancy
- * ``` perl /usr/local/trinityrnaseq-Trinity-v2.6.6/util/misc/get_longest_isoform_seq_per_trinity_gene.pl Trinity.fasta > output.fasta``` 
+ * ``` perl /usr/local/anaconda3/opt/trinity-2.1.1/util/misc/get_longest_isoform_seq_per_trinity_gene.pl Trinity.fasta > output.fasta``` 
  * [Cd-hit](http://weizhongli-lab.org/cd-hit/) 
     ```
     cd-hit-est -i input.fasta -o output.fasta -T 12 -t 1 –c 0.9
