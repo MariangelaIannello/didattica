@@ -23,7 +23,7 @@ Reads are usually much shorter than the transcripts,we need to reconstruct the t
 
     --quality_trimming_params \<string\>
     
-    defaults to: "ILLUMINACLIP:/usr/local/trinityrnaseq-Trinity-v2.6.6/trinity-plugins/Trimmomatic/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:5 LEADING:5 TRAILING:5 MINLEN:25"
+    defaults to: "ILLUMINACLIP:/usr/local/anaconda3/opt/trinity-2.1.1/trinity-plugins/Trimmomatic-0.32/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:5 LEADING:5 TRAILING:5 MINLEN:25"
 
 
 > MEMORY: ~ 1G disk space per 1M illumina reads; ~ 1G RAM per 1M illumina reads
