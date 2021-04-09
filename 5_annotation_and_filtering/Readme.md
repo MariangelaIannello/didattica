@@ -17,7 +17,7 @@ Annotation tool using probabilistic models:
 + See also [InterPro consortium](http://www.ebi.ac.uk/interpro/)
 
 
-## Annotate sequences with Diamon
+## Annotate sequences with Diamond
 
 [Diamond](https://github.com/bbuchfink/diamond) is optimized for large input files of >1 million proteins.
 
