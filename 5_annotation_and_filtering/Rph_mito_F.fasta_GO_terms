@@ -1,0 +1,39 @@
+qpid	ontology	goid	desc	ARGOT_score	ARGOT_PPV	ARGOT_rank
+Ruditapes_philippinarum_F_ATP6	CC	0045263	proton-transporting ATP synthase complex, coupling factor F(o)	8.36252930201	0.724589913877	1
+Ruditapes_philippinarum_F_ATP6	BP	0015985	energy coupled proton transport, down electrochemical gradient	7.4784803079	0.701775684814	1
+Ruditapes_philippinarum_F_ATP6	MF	0015078	proton transmembrane transporter activity	5.36213432997	0.640929226219	1
+Ruditapes_philippinarum_F_ATP6	BP	0006754	ATP biosynthetic process	7.45234951732	0.70108136052	3
+Ruditapes_philippinarum_F_ATP6	CC	0005739	mitochondrion	4.53938012565	0.614060522311	6
+Ruditapes_philippinarum_F_ATP6	CC	0019866	organelle inner membrane	1.57085625384	0.486684684064	14
+Ruditapes_philippinarum_F_ATP6	CC	0016021	integral component of membrane	0.830509486151	0.437024089707	21
+Ruditapes_philippinarum_F_partial_CO2	MF	0005507	copper ion binding	6.64477261669	0.678988667834	1
+Ruditapes_philippinarum_F_partial_CO2	CC	0005739	mitochondrion	4.4240963801	0.610106943185	1
+Ruditapes_philippinarum_F_partial_CO2	BP	0022900	electron transport chain	4.19839030689	0.602214421122	1
+Ruditapes_philippinarum_F_partial_CO2	MF	0016676	oxidoreductase activity, acting on a heme group of donors, oxygen as acceptor	4.69533731355	0.619329916561	2
+Ruditapes_philippinarum_F_partial_CO2	BP	1902600	proton transmembrane transport	3.98026363469	0.594382684019	2
+Ruditapes_philippinarum_F_partial_CO2	MF	0015002	heme-copper terminal oxidase activity	4.68974833297	0.619142604769	5
+Ruditapes_philippinarum_F_partial_CO2	MF	0015078	proton transmembrane transporter activity	4.24760859357	0.603953240388	6
+Ruditapes_philippinarum_F_partial_CO2	MF	0009055	electron transfer activity	3.7955150155	0.587579824117	8
+Ruditapes_philippinarum_F_partial_CO2	CC	0016020	membrane	0.621323352508	0.419152545161	8
+Ruditapes_philippinarum_F_partial_CO3	BP	0019646	aerobic electron transport chain	6.55779354409	0.676530907271	1
+Ruditapes_philippinarum_F_partial_CO3	MF	0015002	heme-copper terminal oxidase activity	4.01946510968	0.595805725959	1
+Ruditapes_philippinarum_F_partial_CO3	CC	0005739	mitochondrion	1.53180629806	0.484408467954	1
+Ruditapes_philippinarum_F_partial_CO3	MF	0016676	oxidoreductase activity, acting on a heme group of donors, oxygen as acceptor	3.99562486423	0.59494113912	2
+Ruditapes_philippinarum_F_partial_CO3	BP	1902600	proton transmembrane transport	3.3871134879	0.571927710296	4
+Ruditapes_philippinarum_F_partial_CO3	CC	0005886	plasma membrane	0.872674047198	0.440341519617	4
+Ruditapes_philippinarum_F_partial_CO3	MF	0015078	proton transmembrane transporter activity	3.6146179447	0.580756397703	5
+Ruditapes_philippinarum_F_partial_CO3	MF	0009055	electron transfer activity	3.22989663058	0.565652179256	7
+Ruditapes_philippinarum_F_partial_CO3	CC	0016021	integral component of membrane	0.56385849014	0.413731422544	9
+Ruditapes_philippinarum_F_partial_CO3	BP	0009401	phosphoenolpyruvate-dependent sugar phosphotransferase system	0.0173687751484	0.323836002226	22
+Ruditapes_philippinarum_F_CYTB	CC	0005739	mitochondrion	0.650667085438	0.421824037622	1
+Ruditapes_philippinarum_F_CYTB	BP	0022904	respiratory electron transport chain	0.535428473651	0.410947164325	1
+Ruditapes_philippinarum_F_CYTB	MF	0009055	electron transfer activity	0.386551597596	0.394975593569	1
+Ruditapes_philippinarum_F_CYTB	MF	0046872	metal ion binding	0.361745394119	0.392030937325	2
+Ruditapes_philippinarum_F_CYTB	CC	0016021	integral component of membrane	0.0619178284148	0.340830541834	8
+Ruditapes_philippinarum_F_NADH1	CC	0005739	mitochondrion	3.66616551411	0.582717830688	1
+Ruditapes_philippinarum_F_partial_NADH4L	CC	0005739	mitochondrion	4.53176145246	0.613800805519	1
+Ruditapes_philippinarum_F_partial_NADH4L	CC	0016021	integral component of membrane	0.82911559972	0.436912999942	8
+Ruditapes_philippinarum_F_NADH5	CC	0005739	mitochondrion	0.435494332005	0.400520375816	1
+Ruditapes_philippinarum_F_NADH5	CC	0016021	integral component of membrane	0.0064950036998	0.316401898256	8
+Ruditapes_philippinarum_F_NADH6	CC	0005739	mitochondrion	4.5396204911	0.614068712702	1
+Ruditapes
