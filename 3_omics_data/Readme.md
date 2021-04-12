@@ -63,7 +63,7 @@ fastqc file.fastq file2.fastq .. [-o output dir] [-f fastq]
 [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
 
 ```
-trimmomatic PE -threads 5 -phred33 ../../SRR10293988_1.fastq ../../SRR10293988_2.fastq ./paired_1 ./unpaired_1 ./paired_2 ./unpaired_2 ILLUMINACLIP:/usr/local/anaconda3/share/trimmomatic-0.39-2/adapters/TruSeq3-SE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:75 2> stats_trimmomatic 
+trimmomatic PE -threads 5 -phred33 ../../SRR10293988_1.fastq ../../SRR10293988_2.fastq ./paired_1 ./unpaired_1 ./paired_2 ./unpaired_2 ILLUMINACLIP:/usr/local/anaconda3/share/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:75 2> stats_trimmomatic 
 ```
 * ILLUMINACLIP:TruSeq3-PE.fa:2:30:10  
     * path to adapters fasta;
