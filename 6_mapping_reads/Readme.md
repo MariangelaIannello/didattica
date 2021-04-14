@@ -6,8 +6,9 @@
 
 3. MODIFY URL by replacing **/tree/main/** with **/trunk/**
     
-    Example: https://github.com/MariangelaIannello/didattica/tree/main/5_annotation_and_filtering 
-		https://github.com/MariangelaIannello/didattica/trunk/5_annotation_and_filtering
+    Example: https://github.com/MariangelaIannello/didattica/tree/main/5_annotation_and_filtering
+    
+	https://github.com/MariangelaIannello/didattica/trunk/5_annotation_and_filtering
 
 4. donwload the folder using svn
 svn checkout https://github.com/MariangelaIannello/didattica/trunk/5_annotation_and_filtering
@@ -116,9 +117,6 @@ P = probabliy of incorrect mapping position
 
 mapping quality=20 --> 1% of probability that the alignment is incorrect
 
-
-```samtools addreplacerg -o output.bam -O BAM -r "@RG\tID:1\tLB:1\tPL:Illumina\tSM:Sample_01" Sample_01.sorted.bam```
-for i in *sorted.bam; do java -jar picard.jar AddOrReplaceReadGroups I=$i O=$i"add_group" RGLB=lib1 RGPL=illumina RGSM=${i::9} RGPU=R1; done
 
 
 ## Filter SAM files and index BAM files
