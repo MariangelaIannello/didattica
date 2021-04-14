@@ -11,8 +11,8 @@
 	https://github.com/MariangelaIannello/didattica/trunk/5_annotation_and_filtering
 
 4. donwload the folder using svn:
-
 ```svn checkout https://github.com/MariangelaIannello/didattica/trunk/5_annotation_and_filtering```
+
 ---
 
 
