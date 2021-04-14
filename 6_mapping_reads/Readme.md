@@ -128,7 +128,7 @@ samtools -F INT # exclude reads with the flasgs in INT
 samtools view -h -f 0x2 -F 256 -q 30 -Sb input.sam > file.bam # keep only proper paired mapping reads (-f 0x2), with minimum mapping quality of 30 (-q 30), exclude secondary alignments (-F 256, or -F 0x200) and save the output in bam format (-Sb)
 samtools sort file.bam > file_sorted.bam # can be very computationally intensive
 samtools index file_sorted.bam # index the file so that we can access to specific regions
-samtools view file_sorted.bam M_assembly49:10000-12000 #show read that align to the "M_assembly49" chromosome, fromm position 10000 to 12000
+samtools view file_sorted.bam M_assembly49:10000-12000 #show reads that align to the "M_assembly49" chromosome, from position 10000 to 12000
 
 samtools idxstats input.sortedbam #stats about mapping reads for each chromosome (prints reference name, reference length, number of mapped reads and number of unmapped reads)
 ```
