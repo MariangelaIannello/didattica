@@ -133,3 +133,21 @@ samtools view file_sorted.bam M_assembly49:10000-12000 #show reads that align to
 
 samtools idxstats input.sortedbam #stats about mapping reads for each chromosome (prints reference name, reference length, number of mapped reads and number of unmapped reads)
 ```
+## View alignment
+
+(Bam file must be sorted and indexed)
+
+```samtools tview -p assembly3:1-500 Sample_23_merged.sorted.bam MF.fasta```
+
+Use arrows to move, Crtrl+h to move 1000b forward, ctrl+l 1000b backward
+
+
+> . = base that matched the reference on the forward strand 
+
+> , = base that matched the reference on the reverse strand
+
+> AGTCN = base that did not match the reference on the forward strand
+
+> agtcn = base that did not match the reference on the reverse strand
+
+Alternative: [igv](http://software.broadinstitute.org/software/igv/home)
